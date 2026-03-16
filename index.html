@@ -1562,12 +1562,15 @@
   #chat-input-row {
     display: flex; gap: 8px; padding: 12px 14px;
     border-top: 1px solid #e5e7eb; background: #fff;
+    align-items: flex-end;
   }
   #chat-input {
-    flex: 1; border: 1px solid #e5e7eb; border-radius: 20px;
-    padding: 9px 14px; font-size: 14px; outline: none;
+    flex: 1; border: 1px solid #e5e7eb; border-radius: 12px;
+    padding: 10px 14px; font-size: 14px; outline: none;
     font-family: 'Inter', sans-serif;
     transition: border-color .2s;
+    resize: none; min-height: 44px; max-height: 120px;
+    line-height: 1.5; overflow-y: auto;
   }
   #chat-input:focus { border-color: #7C3AED; }
   #chat-send {
@@ -1604,10 +1607,10 @@
     </button>
   </div>
   <div id="chat-messages">
-    <div class="chat-msg bot">¡Hola! Soy el asistente de Implemental-IA 👋 Esta conversación es un pequeño ejemplo de lo que la IA puede hacer por tu empresa. Juntos vamos a descubrir oportunidades concretas para tu negocio. ¿En qué industria o sector opera tu empresa?</div>
+    <div class="chat-msg bot">¡Hola! Soy el asistente de Implemental-IA 👋 Esta charla es una pequeña muestra de lo que la IA puede hacer por tu empresa. Para mostrarte oportunidades concretas, contame: ¿en qué industria operás, con qué tipo de datos contás y qué querés optimizar?</div>
   </div>
   <div id="chat-input-row">
-    <input id="chat-input" type="text" placeholder="Escribí tu consulta..." autocomplete="off" />
+    <textarea id="chat-input" placeholder="Escribí tu consulta..." autocomplete="off" rows="1"></textarea>
     <button id="chat-send" aria-label="Enviar">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
@@ -1626,10 +1629,21 @@
 
   let chatHistory = [];
 
+  // Auto-abrir al cargar
+  setTimeout(() => chatWindow.classList.add('open'), 1200);
+
   chatBtn.addEventListener('click', () => chatWindow.classList.toggle('open'));
   chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
 
-  chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendMessage(); });
+  // Textarea crece automáticamente
+  chatInput.addEventListener('input', () => {
+    chatInput.style.height = 'auto';
+    chatInput.style.height = Math.min(chatInput.scrollHeight, 120) + 'px';
+  });
+
+  chatInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+  });
   chatSend.addEventListener('click', sendMessage);
 
   function addMsg(text, role) {
@@ -1654,6 +1668,7 @@
     const text = chatInput.value.trim();
     if (!text) return;
     chatInput.value = '';
+    chatInput.style.height = 'auto';
     chatInput.disabled = true;
     chatSend.disabled = true;
 
