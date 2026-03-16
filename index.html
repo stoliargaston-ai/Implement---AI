@@ -1504,6 +1504,185 @@
   </div>
 </footer>
 
+<!-- ══════════════════════════ CHAT BOT ══════════════════════════ -->
+<style>
+  #chat-btn {
+    position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+    width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer;
+    background: linear-gradient(135deg, #7C3AED, #9D6BF5);
+    box-shadow: 0 4px 20px rgba(124,58,237,0.4);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .2s, box-shadow .2s;
+  }
+  #chat-btn:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(124,58,237,0.5); }
+  #chat-btn svg { width: 28px; height: 28px; color: #fff; }
+
+  #chat-window {
+    position: fixed; bottom: 100px; right: 28px; z-index: 9998;
+    width: 360px; max-width: calc(100vw - 40px);
+    background: #fff; border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+    display: none; flex-direction: column; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+  }
+  #chat-window.open { display: flex; }
+
+  #chat-header {
+    background: linear-gradient(135deg, #7C3AED, #9D6BF5);
+    color: #fff; padding: 16px 18px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  #chat-header .chat-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  #chat-header .chat-avatar svg { width: 20px; height: 20px; }
+  #chat-header .chat-info { flex: 1; }
+  #chat-header .chat-name { font-weight: 700; font-size: 15px; }
+  #chat-header .chat-status { font-size: 12px; opacity: .8; }
+  #chat-close { background: none; border: none; cursor: pointer; color: #fff; opacity: .8; }
+  #chat-close:hover { opacity: 1; }
+
+  #chat-messages {
+    flex: 1; overflow-y: auto; padding: 16px;
+    display: flex; flex-direction: column; gap: 10px;
+    min-height: 280px; max-height: 380px;
+    background: #f9f9fb;
+  }
+  .chat-msg { max-width: 82%; padding: 10px 14px; border-radius: 12px; font-size: 14px; line-height: 1.5; }
+  .chat-msg.bot { background: #fff; border: 1px solid #e5e7eb; align-self: flex-start; color: #111827; border-bottom-left-radius: 4px; }
+  .chat-msg.user { background: linear-gradient(135deg, #7C3AED, #9D6BF5); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+  .chat-typing { display: flex; gap: 4px; align-items: center; padding: 10px 14px; }
+  .chat-typing span { width: 7px; height: 7px; border-radius: 50%; background: #9D6BF5; animation: typing .9s infinite; }
+  .chat-typing span:nth-child(2) { animation-delay: .2s; }
+  .chat-typing span:nth-child(3) { animation-delay: .4s; }
+  @keyframes typing { 0%,60%,100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
+
+  #chat-input-row {
+    display: flex; gap: 8px; padding: 12px 14px;
+    border-top: 1px solid #e5e7eb; background: #fff;
+  }
+  #chat-input {
+    flex: 1; border: 1px solid #e5e7eb; border-radius: 20px;
+    padding: 9px 14px; font-size: 14px; outline: none;
+    font-family: 'Inter', sans-serif;
+    transition: border-color .2s;
+  }
+  #chat-input:focus { border-color: #7C3AED; }
+  #chat-send {
+    background: linear-gradient(135deg, #7C3AED, #9D6BF5);
+    border: none; border-radius: 50%; width: 38px; height: 38px;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: transform .15s;
+  }
+  #chat-send:hover { transform: scale(1.08); }
+  #chat-send svg { width: 17px; height: 17px; color: #fff; }
+</style>
+
+<button id="chat-btn" aria-label="Abrir chat">
+  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+  </svg>
+</button>
+
+<div id="chat-window">
+  <div id="chat-header">
+    <div class="chat-avatar">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+      </svg>
+    </div>
+    <div class="chat-info">
+      <div class="chat-name">Asistente Implemental-IA</div>
+      <div class="chat-status">● En línea</div>
+    </div>
+    <button id="chat-close" aria-label="Cerrar chat">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+  <div id="chat-messages">
+    <div class="chat-msg bot">¡Hola! Soy el asistente de Implemental-IA. ¿En qué puedo ayudarte hoy?</div>
+  </div>
+  <div id="chat-input-row">
+    <input id="chat-input" type="text" placeholder="Escribí tu consulta..." autocomplete="off" />
+    <button id="chat-send" aria-label="Enviar">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  const chatBtn = document.getElementById('chat-btn');
+  const chatWindow = document.getElementById('chat-window');
+  const chatClose = document.getElementById('chat-close');
+  const chatInput = document.getElementById('chat-input');
+  const chatSend = document.getElementById('chat-send');
+  const chatMessages = document.getElementById('chat-messages');
+
+  let chatHistory = [];
+
+  chatBtn.addEventListener('click', () => chatWindow.classList.toggle('open'));
+  chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
+
+  chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendMessage(); });
+  chatSend.addEventListener('click', sendMessage);
+
+  function addMsg(text, role) {
+    const div = document.createElement('div');
+    div.className = 'chat-msg ' + role;
+    div.textContent = text;
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    return div;
+  }
+
+  function showTyping() {
+    const div = document.createElement('div');
+    div.className = 'chat-msg bot chat-typing';
+    div.innerHTML = '<span></span><span></span><span></span>';
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    return div;
+  }
+
+  async function sendMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+    chatInput.value = '';
+    chatInput.disabled = true;
+    chatSend.disabled = true;
+
+    addMsg(text, 'user');
+    chatHistory.push({ role: 'user', content: text });
+
+    const typing = showTyping();
+
+    try {
+      const res = await fetch('/.netlify/functions/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: chatHistory }),
+      });
+      const data = await res.json();
+      typing.remove();
+      const reply = data.message || 'Hubo un error, intenta de nuevo.';
+      addMsg(reply, 'bot');
+      chatHistory.push({ role: 'assistant', content: reply });
+    } catch {
+      typing.remove();
+      addMsg('Error de conexión. Intenta de nuevo.', 'bot');
+    }
+
+    chatInput.disabled = false;
+    chatSend.disabled = false;
+    chatInput.focus();
+  }
+</script>
 
 <!-- ══════════════════════════ JS ══════════════════════════ -->
 <script>
