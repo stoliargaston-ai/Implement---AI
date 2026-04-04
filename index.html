@@ -1497,12 +1497,34 @@
   const chatMessages = document.getElementById('chat-messages');
 
   let chatHistory = [];
+  let chatMessageCount = 0;
+  let chatOpened = false;
+
+  function gaEvent(name, params) {
+    if (typeof gtag !== 'undefined') gtag('event', name, params || {});
+  }
 
   // Auto-abrir al cargar
-  setTimeout(() => chatWindow.classList.add('open'), 1200);
+  setTimeout(() => {
+    chatWindow.classList.add('open');
+    if (!chatOpened) {
+      chatOpened = true;
+      gaEvent('chatbot_auto_open');
+    }
+  }, 1200);
 
-  chatBtn.addEventListener('click', () => chatWindow.classList.toggle('open'));
-  chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
+  chatBtn.addEventListener('click', () => {
+    const isOpening = !chatWindow.classList.contains('open');
+    chatWindow.classList.toggle('open');
+    if (isOpening && !chatOpened) {
+      chatOpened = true;
+      gaEvent('chatbot_open', { method: 'button' });
+    }
+  });
+  chatClose.addEventListener('click', () => {
+    chatWindow.classList.remove('open');
+    gaEvent('chatbot_close', { messages_sent: chatMessageCount });
+  });
 
   // Textarea crece automáticamente
   chatInput.addEventListener('input', () => {
@@ -1543,6 +1565,8 @@
 
     addMsg(text, 'user');
     chatHistory.push({ role: 'user', content: text });
+    chatMessageCount++;
+    gaEvent('chatbot_message_sent', { message_number: chatMessageCount });
 
     const typing = showTyping();
 
@@ -1557,6 +1581,9 @@
       const reply = data.message || 'Hubo un error, intenta de nuevo.';
       addMsg(reply, 'bot');
       chatHistory.push({ role: 'assistant', content: reply });
+      if (chatMessageCount >= 4) {
+        gaEvent('chatbot_handoff', { messages_sent: chatMessageCount });
+      }
     } catch {
       typing.remove();
       addMsg('Error de conexión. Intenta de nuevo.', 'bot');
@@ -1601,6 +1628,29 @@
     document.getElementById('mobileMenu').classList.remove('open');
   }
 
+  // ── GA4 Event Tracking ─────────────────────────────────────────
+  function gaEvent(name, params) {
+    if (typeof gtag !== 'undefined') gtag('event', name, params || {});
+  }
+
+  // WhatsApp
+  document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
+    el.addEventListener('click', () => gaEvent('whatsapp_click', { location: el.closest('section')?.id || 'page' }));
+  });
+
+  // Email
+  document.querySelectorAll('a[href^="mailto"]').forEach(el => {
+    el.addEventListener('click', () => gaEvent('email_click'));
+  });
+
+  // CTAs principales
+  document.querySelectorAll('a[href="#contacto"]').forEach(el => {
+    el.addEventListener('click', () => gaEvent('cta_click', { label: el.textContent.trim() }));
+  });
+  document.querySelectorAll('a[href="#servicios"]').forEach(el => {
+    el.addEventListener('click', () => gaEvent('cta_click', { label: el.textContent.trim() }));
+  });
+
   // Capturar referrer
   document.getElementById('como_nos_encontro').value = document.referrer || 'Acceso directo';
 
@@ -1631,9 +1681,11 @@
       e.target.reset();
 
       // Evento GA4
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'form_submit', { chatbot_usado: chatHistory && chatHistory.length > 0 });
-      }
+      gaEvent('form_submit', {
+        servicio: formData.get('servicio') || 'no especificado',
+        chatbot_usado: chatHistory && chatHistory.length > 0,
+        mensajes_chat: chatHistory ? Math.floor(chatHistory.length / 2) : 0
+      });
 
       setTimeout(() => {
         btn.innerHTML = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg> Enviar mensaje`;
