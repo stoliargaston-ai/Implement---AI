@@ -57,15 +57,15 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --violet:       #7C3AED;
-      --violet-light: #9D6BF5;
-      --violet-dark:  #5B21B6;
-      --violet-pale:  #EDE9FE;
-      --green:        #10B981;
-      --green-light:  #34D399;
-      --green-pale:   #D1FAE5;
-      --dark:         #0F0A1E;
-      --dark-mid:     #1E1535;
+      --violet:       #5A4A99;
+      --violet-light: #7A6AB9;
+      --violet-dark:  #1E1735;
+      --violet-pale:  #EDE8F5;
+      --green:        #33AF7F;
+      --green-light:  #55C99A;
+      --green-pale:   #D0F0E4;
+      --dark:         #1E1735;
+      --dark-mid:     #1E1735;
       --gray-900:     #111827;
       --gray-700:     #374151;
       --gray-500:     #6B7280;
@@ -73,9 +73,9 @@
       --gray-100:     #F3F4F6;
       --white:        #FFFFFF;
       --bg-subtle:    #FAFAFA;
-      --shadow-sm:    0 1px 3px rgba(124,58,237,.08), 0 1px 2px rgba(0,0,0,.06);
-      --shadow-md:    0 4px 20px rgba(124,58,237,.12), 0 2px 8px rgba(0,0,0,.08);
-      --shadow-lg:    0 20px 60px rgba(124,58,237,.15), 0 8px 24px rgba(0,0,0,.1);
+      --shadow-sm:    0 1px 3px rgba(90,74,153,.08), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md:    0 4px 20px rgba(90,74,153,.12), 0 2px 8px rgba(0,0,0,.08);
+      --shadow-lg:    0 20px 60px rgba(90,74,153,.15), 0 8px 24px rgba(0,0,0,.1);
       --radius:       14px;
       --radius-sm:    8px;
     }
@@ -84,6 +84,7 @@
 
     body {
       font-family: 'Hanken Grotesk', system-ui, sans-serif;
+      font-weight: 300;
       background: var(--white);
       color: var(--gray-700);
       line-height: 1.6;
@@ -92,6 +93,7 @@
 
     h1, h2, h3, h4 {
       font-family: 'Hanken Grotesk', system-ui, sans-serif;
+      font-weight: 800;
       color: var(--gray-900);
       line-height: 1.2;
     }
@@ -303,10 +305,12 @@
 
     .hero-desc {
       font-size: 18px;
+      font-weight: 300;
       color: var(--gray-500);
       line-height: 1.75;
-      margin-bottom: 36px;
-      max-width: 580px;
+      margin: 0 auto 36px;
+      max-width: 560px;
+      text-align: center;
     }
 
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
@@ -1064,11 +1068,7 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#contacto" class="btn btn-primary">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-            Agenda una consulta gratuita
-          </a>
-          <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+          <a href="#servicios" class="btn btn-primary">Ver servicios</a>
         </div>
 
       </div>
