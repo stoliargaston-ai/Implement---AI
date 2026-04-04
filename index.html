@@ -282,10 +282,12 @@
 
     .hero-content {
       position: relative;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto;
     }
 
     .hero-badge { margin-bottom: 24px; }
@@ -298,17 +300,16 @@
       margin-bottom: 22px;
     }
     .hero-title .accent { color: var(--violet); }
-    .hero-title .accent-green { color: var(--green); }
 
     .hero-desc {
       font-size: 18px;
       color: var(--gray-500);
       line-height: 1.75;
       margin-bottom: 36px;
-      max-width: 480px;
+      max-width: 580px;
     }
 
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 
     .hero-stats {
       display: flex;
@@ -926,13 +927,6 @@
       .nav-links, .nav-cta .btn-outline { display: none; }
       .hamburger { display: flex; }
 
-      .hero-content {
-        grid-template-columns: 1fr;
-        gap: 48px;
-        text-align: center;
-      }
-      .hero-actions { justify-content: center; }
-      .hero-stats { justify-content: center; }
       .hero-desc { margin: 0 auto 36px; }
 
       .services-grid { grid-template-columns: 1fr 1fr; }
@@ -1062,7 +1056,7 @@
         </div>
 
         <h1 class="hero-title">
-          Transforma tu empresa con <span class="accent">Inteligencia Artificial</span> <span class="accent-green">real</span>
+          Transforma tu empresa con <span class="accent">Inteligencia Artificial</span>
         </h1>
 
         <p class="hero-desc">
@@ -1077,63 +1071,6 @@
           <a href="#servicios" class="btn btn-outline">Ver servicios</a>
         </div>
 
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-label" style="font-size:14px;color:var(--gray-700);font-weight:600;">Automatización de procesos</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-label" style="font-size:14px;color:var(--gray-700);font-weight:600;">Modelos predictivos a medida</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-label" style="font-size:14px;color:var(--gray-700);font-weight:600;">Acompañamiento de punta a punta</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right visual -->
-      <div class="hero-visual">
-        <div class="hero-card-main">
-          <div class="card-header">
-            <span class="card-title-sm">Modelo predictivo</span>
-            <span class="card-live"><span class="card-live-dot"></span>En vivo</span>
-          </div>
-          <div class="metric-big" style="font-size:32px;">Modelo activo</div>
-          <div class="metric-label">Predicción de ingresos en tiempo real</div>
-          <div class="bar-chart">
-            <div class="bar" style="height:35%"></div>
-            <div class="bar" style="height:52%"></div>
-            <div class="bar" style="height:44%"></div>
-            <div class="bar semi" style="height:60%"></div>
-            <div class="bar active" style="height:72%"></div>
-            <div class="bar active" style="height:80%"></div>
-            <div class="bar active" style="height:88%"></div>
-            <div class="bar active" style="height:95%"></div>
-          </div>
-          <div class="card-trend">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-            Tendencia positiva · Modelo activo
-          </div>
-        </div>
-
-        <!-- Floating card 1 -->
-        <div class="float-card float-card-1">
-          <div class="float-icon violet">
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
-          </div>
-          <div>
-            <div class="float-text-sm">Procesos automatizados</div>
-            <div class="float-text-main">Menos trabajo manual</div>
-          </div>
-        </div>
-
-        <!-- Floating card 2 -->
-        <div class="float-card float-card-2">
-          <div class="float-text-sm">Estado del modelo</div>
-          <div class="float-text-main" style="color:var(--gray-900);font-size:17px;font-weight:700;">Activo</div>
-          <div class="float-progress">
-            <div class="float-progress-bar" style="width:100%"></div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -1269,50 +1206,6 @@
         </div>
       </div>
 
-      <!-- Process visual -->
-      <div class="process-visual reveal">
-        <div class="process-card">
-          <div class="process-card-title">Dashboard de seguimiento</div>
-          <div class="process-metrics">
-            <div class="p-metric">
-              <div class="p-metric-val green" style="font-size:18px;">Costos</div>
-              <div class="p-metric-label">Seguimiento en tiempo real</div>
-            </div>
-            <div class="p-metric">
-              <div class="p-metric-val violet" style="font-size:18px;">Eficiencia</div>
-              <div class="p-metric-label">Indicadores operativos</div>
-            </div>
-            <div class="p-metric">
-              <div class="p-metric-val green" style="font-size:18px;">Ingresos</div>
-              <div class="p-metric-label">Proyecciones basadas en datos</div>
-            </div>
-            <div class="p-metric">
-              <div class="p-metric-val violet" style="font-size:18px;">ROI</div>
-              <div class="p-metric-label">Retorno medible</div>
-            </div>
-          </div>
-
-          <div class="p-divider"></div>
-
-          <div style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:12px;text-transform:uppercase;letter-spacing:.8px;">Modelos activos</div>
-
-          <div class="p-model-row">
-            <div class="p-model-name">Predicción demanda</div>
-            <div class="p-model-bar-wrap"><div class="p-model-bar v" style="width:82%"></div></div>
-            <div class="p-model-pct">Activo</div>
-          </div>
-          <div class="p-model-row">
-            <div class="p-model-name">Optimización precios</div>
-            <div class="p-model-bar-wrap"><div class="p-model-bar g" style="width:79%"></div></div>
-            <div class="p-model-pct">Activo</div>
-          </div>
-          <div class="p-model-row">
-            <div class="p-model-name">Clasificación leads</div>
-            <div class="p-model-bar-wrap"><div class="p-model-bar b" style="width:86%"></div></div>
-            <div class="p-model-pct">Activo</div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1359,37 +1252,6 @@
         </div>
       </div>
 
-      <div class="whyus-visual">
-        <div class="impact-card reveal">
-          <div class="impact-icon violet">
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <div class="impact-text">
-            <div class="impact-val">Más ingresos</div>
-            <div class="impact-desc">Optimización de precios con modelos de ML adaptados a tu negocio</div>
-          </div>
-        </div>
-
-        <div class="impact-card reveal">
-          <div class="impact-icon green">
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-          </div>
-          <div class="impact-text">
-            <div class="impact-val">Menos costos operativos</div>
-            <div class="impact-desc">Automatización de procesos repetitivos y optimización continua de modelos</div>
-          </div>
-        </div>
-
-        <div class="impact-card reveal">
-          <div class="impact-icon violet">
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <div class="impact-text">
-            <div class="impact-val">Análisis más ágil</div>
-            <div class="impact-desc">Dashboards con IA que consolidan datos y generan informes en tiempo real</div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
