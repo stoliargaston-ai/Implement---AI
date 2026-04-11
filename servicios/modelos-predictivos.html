@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modelos ML Predictivos | Implemental - IA</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Construimos modelos de machine learning que anticipan lo que va a pasar en tu negocio. Selección, entrenamiento y validación con métricas de negocio reales." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://implemental.com.ar/servicios/modelos-predictivos" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://implemental.com.ar/servicios/modelos-predictivos" />
+  <meta property="og:title" content="Modelos ML Predictivos — Implemental IA" />
+  <meta property="og:description" content="Modelos de machine learning que anticipan lo que va a pasar en tu negocio, para que actúes antes que el problema llegue." />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Implemental IA" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Modelos ML Predictivos — Implemental IA" />
+  <meta name="twitter:description" content="Machine learning aplicado a demanda, churn, fallas de maquinaria y más. Para empresas en Argentina." />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WNLGPR5VN7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WNLGPR5VN7');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    .what-we-do { padding: 100px 0; background: var(--white); }
+    .what-we-do-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+    .feature-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; color: var(--gray-700); }
+    .feature-list li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .cases-section { padding: 100px 0; background: #150F2A; }
+    .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .case-card { background: rgba(90,74,153,0.15); border: 1px solid rgba(90,74,153,0.25); border-radius: 16px; padding: 28px; }
+    .case-industry { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--green-light); margin-bottom: 12px; }
+    .case-desc { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.65; }
+    @media (max-width: 900px) { .what-we-do-grid { grid-template-columns: 1fr; } .cases-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .cases-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">
+        <img src="../logo_implemental_oficial.svg" alt="Implemental - IA" style="height:32px;width:auto;filter:brightness(0) invert(1);" />
+      </a>
+      <ul class="nav-links">
+        <li class="nav-item has-dropdown">
+          <a href="../servicios.html" class="active">Servicios</a>
+          <div class="nav-dropdown">
+            <a href="consultoria-flujos.html"><span class="dd-num">01</span>Consultoría y rediseño de flujos</a>
+            <a href="modelos-predictivos.html"><span class="dd-num">02</span>Modelos ML predictivos</a>
+            <a href="chatbots.html"><span class="dd-num">03</span>Desarrollo de chatbots</a>
+            <a href="automatizacion.html"><span class="dd-num">04</span>Automatización de procesos</a>
+            <a href="mantenimiento.html"><span class="dd-num">05</span>Mantenimiento y mejora continua</a>
+            <a href="analisis-impacto.html"><span class="dd-num">06</span>Análisis de impacto de IA</a>
+            <a href="marketing.html"><span class="dd-num">07</span>Marketing</a>
+            <a href="ecommerce-growth.html"><span class="dd-num">08</span>E-commerce Growth</a>
+          </div>
+        </li>
+        <li><a href="../proceso.html">Proceso</a></li>
+        <li><a href="../contacto.html">Contacto</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../contacto.html" class="btn btn-primary btn-sm">Hablar con un experto</a>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" onclick="closeMenu(event)">
+  <div class="mobile-menu-panel">
+    <a href="../servicios.html" class="active" onclick="closeMenuDirect()">Servicios</a>
+    <a href="consultoria-flujos.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">01 · Consultoría y rediseño de flujos</a>
+    <a href="modelos-predictivos.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">02 · Modelos ML predictivos</a>
+    <a href="chatbots.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">03 · Desarrollo de chatbots</a>
+    <a href="automatizacion.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">04 · Automatización de procesos</a>
+    <a href="mantenimiento.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">05 · Mantenimiento y mejora continua</a>
+    <a href="analisis-impacto.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">06 · Análisis de impacto de IA</a>
+    <a href="marketing.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">07 · Marketing</a>
+    <a href="ecommerce-growth.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">08 · E-commerce Growth</a>
+    <a href="../proceso.html" onclick="closeMenuDirect()">Proceso</a>
+    <a href="../contacto.html" onclick="closeMenuDirect()">Contacto</a>
+    <a href="../contacto.html" class="btn btn-primary" onclick="closeMenuDirect()" style="justify-content:center;margin-top:16px;">Hablar con un experto</a>
+  </div>
+</div>
+
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <span class="badge">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Servicio 02
+      </span>
+      <h1>Modelos ML Predictivos</h1>
+      <p>Construimos modelos de machine learning que anticipan lo que va a pasar en tu negocio, para que actúes antes que el problema llegue.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ QUÉ HACEMOS ══ -->
+<section class="what-we-do">
+  <div class="container">
+    <div class="what-we-do-grid">
+      <div class="reveal">
+        <span class="section-label">Qué hacemos</span>
+        <h2 class="section-title">Machine learning aplicado a decisiones de negocio reales</h2>
+        <p class="section-sub">Cada modelo se diseña y valida contra métricas que importan en tu industria, no solo métricas técnicas.</p>
+      </div>
+      <div class="reveal">
+        <ul class="feature-list">
+          <li>Exploración y preparación de datos históricos</li>
+          <li>Selección y entrenamiento de modelos supervisados y no supervisados</li>
+          <li>Validación con métricas de negocio reales</li>
+          <li>Integración en dashboards o sistemas existentes</li>
+          <li>Documentación completa para uso interno del equipo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CASOS DE APLICACIÓN ══ -->
+<section class="cases-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label-light">Casos de aplicación</span>
+      <h2 class="section-title-white">Escenarios representativos</h2>
+      <p class="section-sub-white">Situaciones típicas en las que este servicio genera impacto concreto en empresas argentinas.</p>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card reveal">
+        <div class="case-industry">E-commerce</div>
+        <p class="case-desc">Una tienda online necesitaba anticipar quiebre de stock antes de que ocurriera. Entrenamos un modelo de demanda que analiza histórico de ventas, estacionalidad y eventos, generando alertas automáticas.</p>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-industry">Finanzas</div>
+        <p class="case-desc">Una fintech quería predecir churn de clientes 30 días antes. Desarrollamos un modelo de clasificación que analiza patrones de uso y genera una lista semanal de clientes en riesgo.</p>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-industry">Manufactura</div>
+        <p class="case-desc">Una planta industrial necesitaba anticipar fallas en maquinaria. Construimos un modelo de mantenimiento predictivo basado en sensores IoT que redujo paradas no planificadas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA BANNER ══ -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div class="cta-text">
+        <h2 class="cta-title">¿Querés anticiparte con datos?</h2>
+        <p class="cta-desc">Agendá una sesión gratuita de 30 minutos. Evaluamos tus datos y te contamos qué tipo de modelo tiene sentido para tu caso.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="../contacto.html" class="btn btn-white">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Agendar sesión gratuita
+        </a>
+        <a href="../servicios.html" class="btn btn-ghost">Ver todos los servicios</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo">
+          <img src="../logo_implemental_oficial.svg" alt="Implemental - IA" style="height:48px;width:auto;filter:brightness(0) invert(1);" />
+        </a>
+        <p>Transformamos datos en decisiones. Construimos la IA que tu empresa necesita, con impacto real y medible.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="consultoria-flujos.html">Consultoría de flujos</a></li>
+          <li><a href="modelos-predictivos.html">Modelos predictivos</a></li>
+          <li><a href="chatbots.html">Chatbots</a></li>
+          <li><a href="automatizacion.html">Automatización</a></li>
+          <li><a href="analisis-impacto.html">Análisis de impacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="../proceso.html">Cómo trabajamos</a></li>
+          <li><a href="../contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:contacto@implemental.com.ar">contacto@implemental.com.ar</a></li>
+          <li><a href="https://wa.me/5491166465651" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025-2026 Implemental - IA. Todos los derechos reservados.</p>
+      <p>Hecho con <span class="green-dot">&#9679;</span> en Buenos Aires</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ CHATBOT ══ -->
+<button id="chat-btn" aria-label="Abrir chat">
+  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+  </svg>
+</button>
+
+<div id="chat-window">
+  <div id="chat-header">
+    <div class="chat-avatar">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+      </svg>
+    </div>
+    <div class="chat-info">
+      <div class="chat-name">Asistente Implemental-IA</div>
+      <div class="chat-status">● En línea</div>
+    </div>
+    <button id="chat-close" aria-label="Cerrar chat">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+  <div id="chat-messages">
+    <div class="chat-msg bot">¡Hola! Soy el asistente de Implemental-IA 👋 Esta charla es una pequeña muestra de lo que la IA puede hacer por tu empresa. Para mostrarte oportunidades concretas, contame: ¿en qué industria operás, con qué tipo de datos contás y qué querés optimizar?</div>
+  </div>
+  <div id="chat-input-row">
+    <textarea id="chat-input" placeholder="Escribí tu consulta..." autocomplete="off" rows="1"></textarea>
+    <button id="chat-send" aria-label="Enviar">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- ══ JS ══ -->
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('visible'), i * 60); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  function closeMenu(e) { if (e.target === document.getElementById('mobileMenu')) document.getElementById('mobileMenu').classList.remove('open'); }
+  function closeMenuDirect() { document.getElementById('mobileMenu').classList.remove('open'); }
+  function gaEvent(name, params) { if (typeof gtag !== 'undefined') gtag('event', name, params || {}); }
+
+  document.querySelectorAll('a[href*="wa.me"]').forEach(el => { el.addEventListener('click', () => gaEvent('whatsapp_click', { location: el.closest('section')?.id || 'page' })); });
+  document.querySelectorAll('a[href^="mailto"]').forEach(el => { el.addEventListener('click', () => gaEvent('email_click')); });
+
+  const chatBtn = document.getElementById('chat-btn');
+  const chatWindow = document.getElementById('chat-window');
+  const chatClose = document.getElementById('chat-close');
+  const chatInput = document.getElementById('chat-input');
+  const chatSend = document.getElementById('chat-send');
+  const chatMessages = document.getElementById('chat-messages');
+  let chatHistory = [], chatMessageCount = 0, chatOpened = false;
+
+  if (!sessionStorage.getItem('chatClosed')) { setTimeout(() => { chatWindow.classList.add('open'); if (!chatOpened) { chatOpened = true; gaEvent('chatbot_auto_open'); } }, 1200); }
+  chatBtn.addEventListener('click', () => { const isOpening = !chatWindow.classList.contains('open'); chatWindow.classList.toggle('open'); if (isOpening && !chatOpened) { chatOpened = true; gaEvent('chatbot_open', { method: 'button' }); } });
+  chatClose.addEventListener('click', () => { chatWindow.classList.remove('open'); sessionStorage.setItem('chatClosed', '1'); gaEvent('chatbot_close', { messages_sent: chatMessageCount }); });
+  chatInput.addEventListener('input', () => { chatInput.style.height = 'auto'; chatInput.style.height = Math.min(chatInput.scrollHeight, 120) + 'px'; });
+  chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); } });
+  chatSend.addEventListener('click', sendMessage);
+
+  function addMsg(text, role) { const div = document.createElement('div'); div.className = 'chat-msg ' + role; div.textContent = text; chatMessages.appendChild(div); chatMessages.scrollTop = chatMessages.scrollHeight; return div; }
+  function showTyping() { const div = document.createElement('div'); div.className = 'chat-msg bot chat-typing'; div.innerHTML = '<span></span><span></span><span></span>'; chatMessages.appendChild(div); chatMessages.scrollTop = chatMessages.scrollHeight; return div; }
+
+  async function sendMessage() {
+    const text = chatInput.value.trim(); if (!text) return;
+    chatInput.value = ''; chatInput.style.height = 'auto'; chatInput.disabled = true; chatSend.disabled = true;
+    addMsg(text, 'user'); chatHistory.push({ role: 'user', content: text }); chatMessageCount++;
+    gaEvent('chatbot_message_sent', { message_number: chatMessageCount });
+    const typing = showTyping();
+    try {
+      const res = await fetch('/.netlify/functions/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: chatHistory }) });
+      const data = await res.json(); typing.remove();
+      const reply = data.message || 'Hubo un error, intenta de nuevo.'; addMsg(reply, 'bot'); chatHistory.push({ role: 'assistant', content: reply });
+      if (chatMessageCount >= 4) gaEvent('chatbot_handoff', { messages_sent: chatMessageCount });
+    } catch { typing.remove(); addMsg('Error de conexión. Intenta de nuevo.', 'bot'); }
+    chatInput.disabled = false; chatSend.disabled = false; chatInput.focus();
+  }
+</script>
+
+</body>
+</html>

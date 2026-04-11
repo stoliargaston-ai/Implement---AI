@@ -3,41 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Implemental - IA | Inteligencia Artificial para tu Empresa</title>
+  <title>Cómo Trabajamos | Implemental - IA</title>
 
   <!-- SEO -->
-  <meta name="description" content="Consultora de Inteligencia Artificial en Buenos Aires. Automatizamos procesos, construimos modelos predictivos y rediseñamos flujos de información para empresas que quieren tomar mejores decisiones, más rápido." />
+  <meta name="description" content="Conocé la metodología de trabajo de Implemental-IA: diagnóstico, diseño de solución, desarrollo e integración, y mejora continua. Un proceso claro orientado a resultados reales." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://implemental.com.ar/" />
+  <link rel="canonical" href="https://implemental.com.ar/proceso" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://implemental.com.ar/" />
-  <meta property="og:title" content="Implemental — Inteligencia Artificial para tu Empresa" />
-  <meta property="og:description" content="Automatizamos procesos, construimos modelos predictivos y rediseñamos flujos de información. Consultora de IA en Buenos Aires." />
+  <meta property="og:url" content="https://implemental.com.ar/proceso" />
+  <meta property="og:title" content="Cómo Trabajamos — Metodología de IA | Implemental" />
+  <meta property="og:description" content="Nuestra metodología estructurada de 4 pasos para implementar IA en tu empresa: diagnóstico, diseño, desarrollo y medición continua." />
   <meta property="og:locale" content="es_AR" />
   <meta property="og:site_name" content="Implemental IA" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Implemental — Inteligencia Artificial para tu Empresa" />
-  <meta name="twitter:description" content="Consultora de IA en Buenos Aires. Automatización, modelos predictivos y optimización de procesos para empresas." />
+  <meta name="twitter:title" content="Cómo Trabajamos — Metodología de IA | Implemental" />
+  <meta name="twitter:description" content="Metodología clara de 4 pasos para implementar IA en tu empresa con resultados medibles." />
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Implemental IA",
-    "url": "https://implemental.com.ar",
-    "description": "Consultora de Inteligencia Artificial para empresas en Buenos Aires. Automatización de procesos, modelos predictivos y optimización de flujos de información.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Buenos Aires",
-      "addressCountry": "AR"
-    },
-    "sameAs": [],
-    "serviceType": ["Consultoría de Inteligencia Artificial", "Automatización de procesos", "Modelos predictivos", "Chatbots empresariales"]
+    "@type": "WebPage",
+    "name": "Metodología de trabajo — Implemental IA",
+    "url": "https://implemental.com.ar/proceso",
+    "description": "Proceso de 4 pasos para implementar Inteligencia Artificial: diagnóstico, diseño, desarrollo e integración, medición y evolución.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Implemental IA",
+      "url": "https://implemental.com.ar"
+    }
   }
   </script>
 
@@ -56,100 +54,130 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* ─── HOME: Hero ─── */
-    .hero-dark {
-      text-align: center;
-    }
-    .hero-dark-content {
-      position: relative;
-      z-index: 1;
-      max-width: 820px;
-      margin: 0 auto;
-    }
-    .hero-logo {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 32px;
-    }
-    .hero-badge {
-      margin-bottom: 24px;
-    }
-    .hero-title {
-      font-size: clamp(38px, 5.5vw, 64px);
-      font-weight: 800;
-      color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 24px;
-    }
-    .hero-title .accent {
-      background: linear-gradient(90deg, #55C99A, #7A6AB9);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-desc {
-      font-size: 18px;
-      font-weight: 300;
-      color: rgba(255,255,255,.72);
-      line-height: 1.75;
-      margin: 0 auto 40px;
-      max-width: 600px;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    /* ─── HOME: Services Preview ─── */
-    .services-preview {
-      padding: 100px 0;
-      background: var(--bg-subtle);
-    }
-    .services-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-    .services-link {
-      text-align: center;
-      margin-top: 40px;
-    }
-    .services-link a {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--violet);
-      transition: color .2s;
-    }
-    .services-link a:hover { color: var(--violet-dark); }
-
-    /* ─── HOME: Process Preview (dark) ─── */
-    .process-preview {
+    /* ─── Process steps section (dark) ─── */
+    .process-section {
       padding: 100px 0;
       background: var(--dark);
     }
-    .process-preview-inner {
-      max-width: 720px;
+    .process-section-inner {
+      max-width: 760px;
       margin: 0 auto;
-    }
-    .process-preview-header {
       text-align: center;
+    }
+    .process-section-header {
       margin-bottom: 16px;
     }
-    .process-preview-header .section-sub-white {
+
+    /* ─── Full timeline steps ─── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      text-align: left;
+      margin-top: 56px;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 28px;
+      padding: 32px 0;
+      position: relative;
+    }
+    .timeline-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 23px;
+      top: 72px;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255,255,255,.12);
+    }
+    .timeline-num {
+      width: 48px; height: 48px;
+      min-width: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      border: 1.5px solid rgba(255,255,255,.2);
+      color: var(--green-light);
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 1;
+      transition: all .3s;
+      flex-shrink: 0;
+    }
+    .timeline-item:hover .timeline-num {
+      background: var(--green);
+      border-color: var(--green);
+      color: var(--white);
+    }
+    .timeline-content {
+      padding-top: 10px;
+    }
+    .timeline-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .timeline-desc {
+      font-size: 15px;
+      color: rgba(255,255,255,.65);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* ─── Why us (dark section) ─── */
+    .whyus-section {
+      padding: 100px 0;
+      background: #150F2A;
+    }
+    .whyus-section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .whyus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 860px;
       margin: 0 auto;
     }
-    .process-link {
-      text-align: center;
-      margin-top: 40px;
+    .whyus-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: all .3s;
     }
-    .process-link a {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--green-light);
-      transition: color .2s;
+    .whyus-card:hover {
+      background: rgba(255,255,255,.08);
+      border-color: rgba(51,175,127,.4);
+      transform: translateY(-4px);
     }
-    .process-link a:hover { color: var(--white); }
+    .whyus-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: rgba(51,175,127,.15);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .whyus-icon svg { width: 24px; height: 24px; color: var(--green-light); }
+    .whyus-card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .whyus-card-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,.6);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 700px) {
+      .whyus-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -175,7 +203,7 @@
             <a href="servicios/ecommerce-growth.html"><span class="dd-num">08</span>E-commerce Growth</a>
           </div>
         </li>
-        <li><a href="proceso.html">Proceso</a></li>
+        <li><a href="proceso.html" class="active">Proceso</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
       <div class="nav-cta">
@@ -200,123 +228,127 @@
     <a href="servicios/analisis-impacto.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">06 · Análisis de impacto de IA</a>
     <a href="servicios/marketing.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">07 · Marketing</a>
     <a href="servicios/ecommerce-growth.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">08 · E-commerce Growth</a>
-    <a href="proceso.html" onclick="closeMenuDirect()">Proceso</a>
+    <a href="proceso.html" class="active" onclick="closeMenuDirect()">Proceso</a>
     <a href="contacto.html" onclick="closeMenuDirect()">Contacto</a>
     <a href="contacto.html" class="btn btn-primary" onclick="closeMenuDirect()" style="justify-content:center;margin-top:16px;">Hablar con un experto</a>
   </div>
 </div>
 
-<!-- ══ HERO ══ -->
-<section class="hero-dark">
-  <div class="hero-dark-bg"></div>
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
   <div class="container">
-    <div class="hero-dark-content">
-      <div class="hero-logo">
-        <img src="logo_implemental_oficial.svg" alt="Implemental - IA" style="width:min(340px,65vw);height:auto;filter:brightness(0) invert(1);" />
+    <div class="page-hero-content">
+      <span class="badge">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        Metodología
+      </span>
+      <h1>Cómo Trabajamos</h1>
+      <p>Metodología clara, enfocada en resultados reales para tu empresa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS STEPS ══ -->
+<section class="process-section">
+  <div class="container">
+    <div class="process-section-inner">
+      <div class="process-section-header reveal">
+        <span class="section-label-light">El proceso</span>
+        <h2 class="section-title-white">4 etapas hacia la transformación con IA</h2>
+        <p class="section-sub-white" style="margin:0 auto;">Cada etapa está diseñada para minimizar el riesgo y maximizar el impacto en tu empresa.</p>
       </div>
-      <div class="hero-badge">
-        <span class="badge">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          Consultoría de IA para empresas
-        </span>
-      </div>
-      <h1 class="hero-title">
-        Transforma tu empresa con <span class="accent">Inteligencia Artificial</span>
-      </h1>
-      <p class="hero-desc">
-        Rediseñamos tus flujos de información, construimos modelos predictivos y automatizamos procesos para que tomes mejores decisiones, más rápido.
-      </p>
-      <div class="hero-actions">
-        <a href="servicios.html" class="btn btn-primary">Ver servicios</a>
-        <a href="contacto.html" class="btn btn-ghost">Hablar con un experto</a>
+
+      <div class="timeline reveal">
+
+        <div class="timeline-item">
+          <div class="timeline-num">1</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Diagnóstico y mapeo</div>
+            <div class="timeline-desc">Relevamos tus procesos actuales, fuentes de datos y objetivos de negocio para identificar dónde la IA genera el mayor impacto. Sin asumir soluciones de antemano: primero entendemos tu realidad.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-num">2</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Diseño de solución</div>
+            <div class="timeline-desc">Diseñamos la arquitectura de datos y los modelos más adecuados para tu caso, con un roadmap claro de implementación y métricas de éxito definidas desde el principio.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-num">3</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Desarrollo e integración</div>
+            <div class="timeline-desc">Construimos, validamos e integramos las soluciones en tus sistemas actuales. Trabajamos en ciclos cortos con revisiones frecuentes para asegurar que la dirección sea correcta y la fricción operativa mínima.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-num">4</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Medición y evolución</div>
+            <div class="timeline-desc">Monitoreamos el impacto real, iteramos sobre los modelos y aseguramos que la solución mejore con el tiempo. Te entregamos dashboards claros con métricas que importan a tu negocio.</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ SERVICES PREVIEW ══ -->
-<section class="services-preview">
+<!-- ══ WHY US ══ -->
+<section class="whyus-section">
   <div class="container">
-    <div class="services-header reveal">
-      <span class="section-label">Lo que hacemos</span>
-      <h2 class="section-title">Servicios de IA a medida de tu negocio</h2>
-      <p class="section-sub" style="margin:0 auto;">Desde el diagnóstico inicial hasta el mantenimiento continuo, acompañamos cada etapa de tu transformación con IA.</p>
+    <div class="whyus-section-header reveal">
+      <span class="section-label-light">Por qué elegirnos</span>
+      <h2 class="section-title-white">Un enfoque diferente al resto</h2>
+      <p class="section-sub-white" style="margin:0 auto;">No vendemos tecnología por venderla. Buscamos el impacto concreto que tu empresa puede lograr.</p>
     </div>
 
-    <div class="services-grid">
-      <!-- 01 -->
-      <div class="service-card reveal">
-        <span class="service-num">01</span>
-        <div class="service-icon">
+    <div class="whyus-grid">
+
+      <div class="whyus-card reveal">
+        <div class="whyus-icon">
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
           </svg>
         </div>
-        <h3 class="service-title">Consultoría y rediseño de flujos</h3>
-        <p class="service-desc">Analizamos y rediseñamos tus procesos de información actuales para identificar cuellos de botella y oportunidades de mejora antes de introducir IA.</p>
+        <div class="whyus-card-title">Resultados, no demos</div>
+        <div class="whyus-card-desc">Nos comprometemos con métricas de negocio reales: reducción de costos, aumento de ingresos, mejora de eficiencia. No con demos que se ven bien pero no generan valor.</div>
       </div>
 
-      <!-- 02 -->
-      <div class="service-card reveal">
-        <span class="service-num">02</span>
-        <div class="service-icon">
+      <div class="whyus-card reveal">
+        <div class="whyus-icon">
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
           </svg>
         </div>
-        <h3 class="service-title">Modelos ML predictivos</h3>
-        <p class="service-desc">Desarrollamos modelos de machine learning a medida que anticipan tendencias, optimizan ingresos, reducen costos y aceleran la toma de decisiones estratégicas.</p>
+        <div class="whyus-card-title">Equipo multidisciplinario</div>
+        <div class="whyus-card-desc">Combinamos experiencia en ciencia de datos, ingeniería de software y consultoría de negocio para diseñar soluciones técnicamente sólidas y estratégicamente alineadas.</div>
       </div>
 
-      <!-- 03 -->
-      <div class="service-card reveal">
-        <span class="service-num">03</span>
-        <div class="service-icon">
+      <div class="whyus-card reveal">
+        <div class="whyus-icon">
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
           </svg>
         </div>
-        <h3 class="service-title">Desarrollo de chatbots</h3>
-        <p class="service-desc">Diseñamos y desplegamos chatbots inteligentes integrados en tus canales, capaces de responder consultas, calificar leads y automatizar la atención al cliente.</p>
-      </div>
-    </div>
-
-    <div class="services-link reveal">
-      <a href="servicios.html">Ver todos los servicios →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ══ PROCESS PREVIEW ══ -->
-<section class="process-preview">
-  <div class="container">
-    <div class="process-preview-inner">
-      <div class="process-preview-header reveal">
-        <span class="section-label-light">Cómo trabajamos</span>
-        <h2 class="section-title-white">Un proceso claro, orientado a resultados</h2>
-        <p class="section-sub-white">Seguimos una metodología estructurada que minimiza el riesgo y facilita la adopción en cada etapa del proyecto.</p>
+        <div class="whyus-card-title">Velocidad sin improvisación</div>
+        <div class="whyus-card-desc">Entregamos valor rápido usando ciclos cortos de desarrollo, pero sin comprometer la calidad del modelo ni la solidez de la arquitectura de datos.</div>
       </div>
 
-      <div class="process-steps reveal">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-content">
-            <div class="step-title">Diagnóstico y mapeo</div>
-            <div class="step-desc">Relevamos tus procesos actuales, fuentes de datos y objetivos de negocio para identificar dónde la IA genera el mayor impacto.</div>
-          </div>
+      <div class="whyus-card reveal">
+        <div class="whyus-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
         </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-content">
-            <div class="step-title">Diseño de solución</div>
-            <div class="step-desc">Diseñamos la arquitectura de datos y los modelos más adecuados, con un roadmap claro de implementación y métricas de éxito.</div>
-          </div>
-        </div>
+        <div class="whyus-card-title">Transferencia de conocimiento</div>
+        <div class="whyus-card-desc">No generamos dependencia. Documentamos, capacitamos y dejamos a tu equipo con las herramientas y el conocimiento para operar y evolucionar las soluciones de forma autónoma.</div>
       </div>
 
-      <div class="process-link reveal">
-        <a href="proceso.html">Ver metodología completa →</a>
-      </div>
     </div>
   </div>
 </section>
@@ -326,8 +358,8 @@
   <div class="container">
     <div class="cta-inner reveal">
       <div class="cta-text">
-        <h2 class="cta-title">¿Listo para implementar IA en tu empresa?</h2>
-        <p class="cta-desc">Agendá una sesión gratuita de 30 minutos con nuestro equipo. Te escuchamos, evaluamos tu caso y te damos una propuesta clara.</p>
+        <h2 class="cta-title">¿Listo para empezar tu diagnóstico?</h2>
+        <p class="cta-desc">La primera sesión es gratuita. En 30 minutos te mostramos dónde está el mayor potencial de IA en tu empresa.</p>
       </div>
       <div class="cta-actions">
         <a href="contacto.html" class="btn btn-white">
@@ -421,13 +453,11 @@
 
 <!-- ══ JS ══ -->
 <script>
-  // Navbar scroll
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 20);
   });
 
-  // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -439,7 +469,6 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach(el => observer.observe(el));
 
-  // Mobile menu
   function toggleMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
   }
@@ -456,7 +485,6 @@
     if (typeof gtag !== 'undefined') gtag('event', name, params || {});
   }
 
-  // WhatsApp & email tracking
   document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
     el.addEventListener('click', () => gaEvent('whatsapp_click', { location: el.closest('section')?.id || 'page' }));
   });
@@ -476,15 +504,13 @@
   let chatMessageCount = 0;
   let chatOpened = false;
 
-  if (!sessionStorage.getItem('chatClosed')) {
-    setTimeout(() => {
-      chatWindow.classList.add('open');
-      if (!chatOpened) {
-        chatOpened = true;
-        gaEvent('chatbot_auto_open');
-      }
-    }, 1200);
-  }
+  setTimeout(() => {
+    chatWindow.classList.add('open');
+    if (!chatOpened) {
+      chatOpened = true;
+      gaEvent('chatbot_auto_open');
+    }
+  }, 1200);
 
   chatBtn.addEventListener('click', () => {
     const isOpening = !chatWindow.classList.contains('open');
