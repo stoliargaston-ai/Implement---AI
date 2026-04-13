@@ -487,13 +487,15 @@
   let chatMessageCount = 0;
   let chatOpened = false;
 
-  setTimeout(() => {
-    chatWindow.classList.add('open');
-    if (!chatOpened) {
-      chatOpened = true;
-      gaEvent('chatbot_auto_open');
-    }
-  }, 1200);
+if (!sessionStorage.getItem('chatAutoOpened')) {
+    sessionStorage.setItem('chatAutoOpened', '1');
+    setTimeout(() => {
+      if (!sessionStorage.getItem('chatClosed')) {
+        chatWindow.classList.add('open');
+        if (!chatOpened) { chatOpened = true; gaEvent('chatbot_auto_open'); }
+      }
+    }, 1200);
+  }
 
   chatBtn.addEventListener('click', () => {
     const isOpening = !chatWindow.classList.contains('open');

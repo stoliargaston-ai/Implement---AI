@@ -297,7 +297,15 @@
   const chatMessages = document.getElementById('chat-messages');
   let chatHistory = [], chatMessageCount = 0, chatOpened = false;
 
-  if (!sessionStorage.getItem('chatAutoOpened')) { setTimeout(() => { sessionStorage.setItem('chatAutoOpened', '1'); chatWindow.classList.add('open'); if (!chatOpened) { chatOpened = true; gaEvent('chatbot_auto_open'); } }, 1200); }
+  if (!sessionStorage.getItem('chatAutoOpened')) {
+    sessionStorage.setItem('chatAutoOpened', '1');
+    setTimeout(() => {
+      if (!sessionStorage.getItem('chatClosed')) {
+        chatWindow.classList.add('open');
+        if (!chatOpened) { chatOpened = true; gaEvent('chatbot_auto_open'); }
+      }
+    }, 1200);
+  }
   chatBtn.addEventListener('click', () => { const isOpening = !chatWindow.classList.contains('open'); chatWindow.classList.toggle('open'); if (isOpening && !chatOpened) { chatOpened = true; gaEvent('chatbot_open', { method: 'button' }); } });
   chatClose.addEventListener('click', () => { chatWindow.classList.remove('open'); sessionStorage.setItem('chatClosed', '1'); gaEvent('chatbot_close', { messages_sent: chatMessageCount }); });
   chatInput.addEventListener('input', () => { chatInput.style.height = 'auto'; chatInput.style.height = Math.min(chatInput.scrollHeight, 120) + 'px'; });
