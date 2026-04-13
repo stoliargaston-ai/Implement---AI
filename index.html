@@ -170,7 +170,7 @@
             <a href="servicios/chatbots.html"><span class="dd-num">03</span>Desarrollo de chatbots</a>
             <a href="servicios/automatizacion.html"><span class="dd-num">04</span>Automatización de procesos</a>
             <a href="servicios/mantenimiento.html"><span class="dd-num">05</span>Mantenimiento y mejora continua</a>
-            <a href="servicios/analisis-impacto.html"><span class="dd-num">06</span>Análisis de impacto de IA</a>
+            <a href="servicios/visualizacion-datos.html"><span class="dd-num">06</span>Visualización de datos</a>
             <a href="servicios/marketing.html"><span class="dd-num">07</span>Marketing</a>
             <a href="servicios/ecommerce-growth.html"><span class="dd-num">08</span>E-commerce Growth</a>
           </div>
@@ -197,7 +197,7 @@
     <a href="servicios/chatbots.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">03 · Desarrollo de chatbots</a>
     <a href="servicios/automatizacion.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">04 · Automatización de procesos</a>
     <a href="servicios/mantenimiento.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">05 · Mantenimiento y mejora continua</a>
-    <a href="servicios/analisis-impacto.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">06 · Análisis de impacto de IA</a>
+    <a href="servicios/visualizacion-datos.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">06 · Visualización de datos</a>
     <a href="servicios/marketing.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">07 · Marketing</a>
     <a href="servicios/ecommerce-growth.html" onclick="closeMenuDirect()" style="font-size:14px;padding-left:16px;opacity:.8;">08 · E-commerce Growth</a>
     <a href="proceso.html" onclick="closeMenuDirect()">Proceso</a>
@@ -357,7 +357,7 @@
           <li><a href="servicios.html">Modelos predictivos</a></li>
           <li><a href="servicios.html">Chatbots</a></li>
           <li><a href="servicios.html">Automatización</a></li>
-          <li><a href="servicios.html">Análisis de impacto</a></li>
+          <li><a href="servicios.html">Visualización de datos</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -477,12 +477,14 @@
   let chatOpened = false;
 
   if (!sessionStorage.getItem('chatAutoOpened')) {
+    sessionStorage.setItem('chatAutoOpened', '1');
     setTimeout(() => {
-      sessionStorage.setItem('chatAutoOpened', '1');
-      chatWindow.classList.add('open');
-      if (!chatOpened) {
-        chatOpened = true;
-        gaEvent('chatbot_auto_open');
+      if (!sessionStorage.getItem('chatClosed')) {
+        chatWindow.classList.add('open');
+        if (!chatOpened) {
+          chatOpened = true;
+          gaEvent('chatbot_auto_open');
+        }
       }
     }, 1200);
   }
