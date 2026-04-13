@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mantenimiento y Mejora Continua | Implemental - IA</title>
+  <title>Configuración y Entrenamiento de Agentes de IA | Implemental - IA</title>
 
   <!-- SEO -->
-  <meta name="description" content="Los modelos de IA no son estáticos. Monitoreamos performance, reentrenamos con datos nuevos y aseguramos que tu solución siga siendo precisa y relevante." />
+  <meta name="description" content="Diseñamos, configuramos y entrenamos agentes de IA a medida para eficientizar las operaciones de tu empresa. Análisis de procesos, entrenamiento y mantenimiento continuo." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://implemental.com.ar/servicios/mantenimiento" />
+  <link rel="canonical" href="https://implemental.com.ar/servicios/agentes" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://implemental.com.ar/servicios/mantenimiento" />
-  <meta property="og:title" content="Mantenimiento y Mejora Continua — Implemental IA" />
-  <meta property="og:description" content="Monitoreo de modelos, reentrenamiento periódico y soporte técnico para que tu solución de IA no pierda precisión con el tiempo." />
+  <meta property="og:url" content="https://implemental.com.ar/servicios/agentes" />
+  <meta property="og:title" content="Configuración y Entrenamiento de Agentes de IA — Implemental" />
+  <meta property="og:description" content="Agentes de IA a medida para eficientizar las operaciones de tu empresa. Análisis, configuración, entrenamiento y mantenimiento." />
   <meta property="og:locale" content="es_AR" />
   <meta property="og:site_name" content="Implemental IA" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mantenimiento y Mejora Continua — Implemental IA" />
-  <meta name="twitter:description" content="Mantenemos tus modelos de IA actualizados, precisos y funcionales en el tiempo." />
+  <meta name="twitter:title" content="Configuración y Entrenamiento de Agentes de IA — Implemental" />
+  <meta name="twitter:description" content="Diseñamos y entrenamos agentes de IA a medida que eficientan las operaciones de tu empresa de forma concreta y medible." />
 
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WNLGPR5VN7"></script>
@@ -43,13 +43,51 @@
     .feature-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
     .feature-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; color: var(--gray-700); }
     .feature-list li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+    .agents-section { padding: 100px 0; background: var(--bg-subtle); }
+    .agents-section-header { text-align: center; margin-bottom: 64px; }
+    .agents-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .agent-card {
+      background: var(--white);
+      border: 1px solid rgba(90,74,153,0.15);
+      border-radius: 16px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .agent-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--violet);
+      background: rgba(90,74,153,0.08);
+      border-radius: 6px;
+      padding: 4px 10px;
+      width: fit-content;
+    }
+    .agent-icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--violet), var(--violet-dark));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .agent-icon svg { width: 22px; height: 22px; color: #fff; }
+    .agent-card h3 { font-size: 17px; font-weight: 700; color: var(--gray-900); line-height: 1.35; }
+    .agent-card p { font-size: 14px; color: var(--gray-600); line-height: 1.65; flex: 1; }
+    .agent-industries { font-size: 12px; color: var(--gray-500); font-style: italic; margin-top: 4px; }
+
     .cases-section { padding: 100px 0; background: #150F2A; }
     .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
     .case-card { background: rgba(90,74,153,0.15); border: 1px solid rgba(90,74,153,0.25); border-radius: 16px; padding: 28px; }
     .case-industry { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--green-light); margin-bottom: 12px; }
     .case-desc { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.65; }
+
+    @media (max-width: 1024px) { .agents-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 900px) { .what-we-do-grid { grid-template-columns: 1fr; } .cases-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 600px) { .cases-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .agents-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -114,11 +152,11 @@
   <div class="container">
     <div class="page-hero-content">
       <span class="badge">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
-        Servicio 05
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        Servicio 09
       </span>
-      <h1>Mantenimiento y Mejora Continua</h1>
-      <p>Los modelos de IA no son estáticos. Nos aseguramos de que tu solución siga siendo precisa y relevante con el tiempo.</p>
+      <h1>Configuración y entrenamiento de Agentes de IA</h1>
+      <p>Analizamos tus operaciones, diseñamos agentes a medida y los entrenamos para que trabajen con el contexto real de tu empresa.</p>
     </div>
   </div>
 </section>
@@ -129,18 +167,111 @@
     <div class="what-we-do-grid">
       <div class="reveal">
         <span class="section-label">Qué hacemos</span>
-        <h2 class="section-title">Tu solución de IA funciona bien hoy, y también en seis meses</h2>
-        <p class="section-sub">Un modelo entrenado es solo el comienzo. El verdadero valor viene del mantenimiento sostenido con datos frescos y contexto actualizado.</p>
+        <h2 class="section-title">Agentes que conocen tu negocio y trabajan dentro de él</h2>
+        <p class="section-sub">Un agente genérico no alcanza. Mapeamos tus procesos, identificamos dónde un agente genera más valor y lo configuramos con el contexto específico de tu empresa.</p>
       </div>
       <div class="reveal">
         <ul class="feature-list">
-          <li>Monitoreo de performance de modelos en producción</li>
-          <li>Reentrenamiento periódico con datos nuevos</li>
-          <li>Alertas de degradación de precisión</li>
-          <li>Ajuste de hiperparámetros y mejoras incrementales</li>
-          <li>Informes mensuales de desempeño y soporte técnico</li>
+          <li>Análisis de procesos para identificar las operaciones donde un agente genera mayor impacto</li>
+          <li>Diseño y configuración del agente según el flujo real de tu empresa</li>
+          <li>Entrenamiento con datos, documentos y contexto de tu negocio</li>
+          <li>Integración con tus herramientas existentes (CRM, ERP, WhatsApp, email, etc.)</li>
+          <li>Monitoreo de desempeño y ajuste continuo según el uso operativo</li>
+          <li>Mantenimiento: actualización del agente cuando cambian procesos o información</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EJEMPLOS DE AGENTES ══ -->
+<section class="agents-section">
+  <div class="container">
+    <div class="agents-section-header reveal">
+      <span class="section-label">Ejemplos concretos</span>
+      <h2 class="section-title">Agentes que ya están transformando empresas</h2>
+      <p class="section-sub" style="margin:0 auto;">Casos reales de agentes que automatizamos para distintos tipos de empresas. Cada uno se adapta al flujo específico del negocio.</p>
+    </div>
+    <div class="agents-grid">
+
+      <!-- Atención al cliente -->
+      <div class="agent-card reveal">
+        <div class="agent-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+          </svg>
+        </div>
+        <span class="agent-tag">Atención al cliente</span>
+        <h3>Agente de soporte 24/7</h3>
+        <p>Responde consultas frecuentes, gestiona reclamos y deriva a un humano solo cuando es necesario. Se entrena con el catálogo, políticas y preguntas históricas de la empresa.</p>
+        <span class="agent-industries">E-commerce · Servicios · Telecom · Salud</span>
+      </div>
+
+      <!-- Ventas -->
+      <div class="agent-card reveal">
+        <div class="agent-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+        </div>
+        <span class="agent-tag">Ventas y CRM</span>
+        <h3>Agente de seguimiento de leads</h3>
+        <p>Califica leads automáticamente, envía follow-ups personalizados, agenda reuniones y actualiza el CRM sin intervención manual. Reduce el tiempo de respuesta de días a minutos.</p>
+        <span class="agent-industries">B2B · Inmobiliarias · Seguros · Consultoría</span>
+      </div>
+
+      <!-- Facturación -->
+      <div class="agent-card reveal">
+        <div class="agent-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <span class="agent-tag">Administración</span>
+        <h3>Agente de facturación y cobranzas</h3>
+        <p>Genera y envía facturas automáticamente, monitorea pagos pendientes y dispara recordatorios de cobranza escalonados. Integrable con sistemas de facturación existentes.</p>
+        <span class="agent-industries">Servicios recurrentes · SaaS · Proveedores · Profesionales</span>
+      </div>
+
+      <!-- Stock y compras -->
+      <div class="agent-card reveal">
+        <div class="agent-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+        </div>
+        <span class="agent-tag">Operaciones</span>
+        <h3>Agente de stock y compras</h3>
+        <p>Monitorea el inventario en tiempo real, anticipa quiebres de stock y genera órdenes de compra automáticas cuando el stock llega al mínimo configurado. Elimina roturas de stock por descuido.</p>
+        <span class="agent-industries">Retail · Manufactura · Distribución · Farmacia</span>
+      </div>
+
+      <!-- RRHH -->
+      <div class="agent-card reveal">
+        <div class="agent-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <span class="agent-tag">Recursos Humanos</span>
+        <h3>Agente de RRHH y onboarding</h3>
+        <p>Responde consultas de empleados sobre políticas, vacaciones y beneficios. Gestiona el proceso de onboarding de nuevos ingresos con checklists automáticos y recordatorios al equipo.</p>
+        <span class="agent-industries">Empresas medianas y grandes · Startups en crecimiento</span>
+      </div>
+
+      <!-- Reportes -->
+      <div class="agent-card reveal">
+        <div class="agent-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <span class="agent-tag">Inteligencia de negocio</span>
+        <h3>Agente de reportes ejecutivos</h3>
+        <p>Genera y distribuye automáticamente informes de KPIs con la periodicidad configurada: diario para operaciones, semanal para ventas, mensual para dirección. Sin que nadie tenga que prepararlo.</p>
+        <span class="agent-industries">Cualquier empresa con datos operativos</span>
+      </div>
+
     </div>
   </div>
 </section>
@@ -150,21 +281,21 @@
   <div class="container">
     <div class="reveal">
       <span class="section-label-light">Casos de aplicación</span>
-      <h2 class="section-title-white">Escenarios representativos</h2>
-      <p class="section-sub-white">Situaciones típicas en las que este servicio genera impacto concreto en empresas argentinas.</p>
+      <h2 class="section-title-white">Resultados en empresas reales</h2>
+      <p class="section-sub-white">Escenarios representativos de cómo los agentes impactan en las operaciones cotidianas.</p>
     </div>
     <div class="cases-grid">
       <div class="case-card reveal">
-        <div class="case-industry">Retail</div>
-        <p class="case-desc">Un modelo de recomendación de productos perdía precisión cada mes por cambios en catálogo y hábitos de compra. Implementamos un pipeline de reentrenamiento automático mensual con validación.</p>
+        <div class="case-industry">Servicios profesionales</div>
+        <p class="case-desc">Un estudio contable respondía manualmente más de 80 consultas de clientes por semana sobre fechas de vencimiento y requerimientos de AFIP. Implementamos un agente entrenado con la normativa vigente y el calendario impositivo que responde el 90% de las consultas sin intervención humana.</p>
       </div>
       <div class="case-card reveal">
-        <div class="case-industry">Marketing</div>
-        <p class="case-desc">Un modelo de scoring de leads entrenado en datos de 2022 ya no reflejaba el comportamiento actual del mercado. Rediseñamos el proceso de actualización continua con nuevos datos de campañas.</p>
+        <div class="case-industry">Distribuidora · Stock</div>
+        <p class="case-desc">Una distribuidora de insumos de oficina sufría roturas de stock frecuentes porque el seguimiento era manual. El agente monitorea 400+ SKUs, detecta cuando alguno cae bajo el mínimo y genera la orden de compra al proveedor correspondiente en forma automática.</p>
       </div>
       <div class="case-card reveal">
-        <div class="case-industry">Operaciones</div>
-        <p class="case-desc">Una empresa de servicios tenía un modelo de asignación de recursos que nadie sabía cómo actualizar internamente. Tomamos el mantenimiento y documentamos el proceso para transferencia de conocimiento.</p>
+        <div class="case-industry">Empresa B2B · Ventas</div>
+        <p class="case-desc">El equipo de ventas perdía leads porque no había capacidad para hacer follow-up rápido. El agente de ventas contesta en menos de 2 minutos, califica el interés del lead con preguntas contextuales y agenda la reunión directamente en el calendario del vendedor asignado.</p>
       </div>
     </div>
   </div>
@@ -175,8 +306,8 @@
   <div class="container">
     <div class="cta-inner reveal">
       <div class="cta-text">
-        <h2 class="cta-title">¿Tu solución de IA sigue funcionando bien?</h2>
-        <p class="cta-desc">Agendá una sesión gratuita. Evaluamos el estado de tus modelos actuales y te decimos qué necesitan para seguir siendo precisos.</p>
+        <h2 class="cta-title">¿Qué proceso de tu empresa puede automatizar un agente?</h2>
+        <p class="cta-desc">Agendá una sesión gratuita. Analizamos tus operaciones e identificamos en qué punto un agente de IA genera el mayor impacto para tu empresa.</p>
       </div>
       <div class="cta-actions">
         <a href="../contacto.html" class="btn btn-white">
@@ -206,7 +337,7 @@
           <li><a href="modelos-predictivos.html">Modelos predictivos</a></li>
           <li><a href="chatbots.html">Chatbots</a></li>
           <li><a href="automatizacion.html">Automatización</a></li>
-          <li><a href="visualizacion-datos.html">Visualización de datos</a></li>
+          <li><a href="agentes.html">Agentes de IA</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -283,7 +414,15 @@
   document.querySelectorAll('a[href^="mailto"]').forEach(el => { el.addEventListener('click', () => gaEvent('email_click')); });
   const chatBtn = document.getElementById('chat-btn'), chatWindow = document.getElementById('chat-window'), chatClose = document.getElementById('chat-close'), chatInput = document.getElementById('chat-input'), chatSend = document.getElementById('chat-send'), chatMessages = document.getElementById('chat-messages');
   let chatHistory = [], chatMessageCount = 0, chatOpened = false;
-  if (!sessionStorage.getItem('chatAutoOpened')) { setTimeout(() => { sessionStorage.setItem('chatAutoOpened', '1'); chatWindow.classList.add('open'); if (!chatOpened) { chatOpened = true; gaEvent('chatbot_auto_open'); } }, 1200); }
+  if (!sessionStorage.getItem('chatAutoOpened')) {
+    sessionStorage.setItem('chatAutoOpened', '1');
+    setTimeout(() => {
+      if (!sessionStorage.getItem('chatClosed')) {
+        chatWindow.classList.add('open');
+        if (!chatOpened) { chatOpened = true; gaEvent('chatbot_auto_open'); }
+      }
+    }, 1200);
+  }
   chatBtn.addEventListener('click', () => { const isOpening = !chatWindow.classList.contains('open'); chatWindow.classList.toggle('open'); if (isOpening && !chatOpened) { chatOpened = true; gaEvent('chatbot_open', { method: 'button' }); } });
   chatClose.addEventListener('click', () => { chatWindow.classList.remove('open'); sessionStorage.setItem('chatClosed', '1'); gaEvent('chatbot_close', { messages_sent: chatMessageCount }); });
   chatInput.addEventListener('input', () => { chatInput.style.height = 'auto'; chatInput.style.height = Math.min(chatInput.scrollHeight, 120) + 'px'; });
