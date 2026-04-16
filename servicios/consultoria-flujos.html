@@ -14,7 +14,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://implemental.com.ar/servicios/consultoria-flujos" />
   <meta property="og:title" content="Consultoría y Rediseño de Flujos — Implemental IA" />
-  <meta property="og:description" content="Analizamos cómo fluye la información en tu empresa y rediseñamos los procesos que frenan tu crecimiento." />
+  <meta property="og:description" content="Analizamos cómo fluye la información en tu empresa y rediseñamos los procesos para sentar las bases de las siguientes implementaciones de IA." />
   <meta property="og:locale" content="es_AR" />
   <meta property="og:site_name" content="Implemental IA" />
 
@@ -43,13 +43,126 @@
     .feature-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
     .feature-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; color: var(--gray-700); }
     .feature-list li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+    /* ── CASO PRÁCTICO ── */
+    .case-study { padding: 100px 0; background: var(--bg-subtle); }
+    .case-study-header { text-align: center; margin-bottom: 64px; }
+
+    .company-card {
+      background: var(--white);
+      border: 1px solid rgba(90,74,153,0.15);
+      border-radius: 20px;
+      padding: 36px 40px;
+      display: flex; gap: 48px; align-items: flex-start;
+      margin-bottom: 64px;
+    }
+    .company-profile { flex: 1; }
+    .company-profile h3 { font-size: 22px; font-weight: 700; color: var(--gray-900); margin-bottom: 6px; }
+    .company-profile .company-type { font-size: 14px; color: var(--violet); font-weight: 600; margin-bottom: 16px; }
+    .company-profile p { font-size: 15px; color: var(--gray-600); line-height: 1.65; }
+    .company-stats { display: flex; gap: 32px; flex-shrink: 0; }
+    .company-stat { text-align: center; }
+    .company-stat .stat-num { font-size: 32px; font-weight: 800; color: var(--violet); line-height: 1; }
+    .company-stat .stat-label { font-size: 12px; color: var(--gray-500); margin-top: 4px; line-height: 1.4; }
+
+    /* Flow diagrams */
+    .flow-section { margin-bottom: 56px; }
+    .flow-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; }
+    .flow-label.bad { color: #e05c5c; }
+    .flow-label.good { color: var(--green); }
+    .flow-diagram { display: flex; align-items: center; gap: 0; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px; }
+    .flow-node {
+      background: var(--white);
+      border: 2px solid rgba(90,74,153,0.2);
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-800);
+      text-align: center;
+      min-width: 120px;
+      flex-shrink: 0;
+      line-height: 1.35;
+    }
+    .flow-node.problem { border-color: #e05c5c; background: #fff5f5; color: #c0392b; }
+    .flow-node.ok { border-color: rgba(51,175,127,0.4); background: #f0fdf8; }
+    .flow-node.highlight { border-color: var(--violet); background: rgba(90,74,153,0.06); }
+    .flow-node .node-sub { font-size: 11px; font-weight: 400; color: var(--gray-500); margin-top: 4px; }
+    .flow-node.problem .node-sub { color: #e05c5c; }
+    .flow-arrow {
+      flex-shrink: 0;
+      width: 36px; height: 2px;
+      background: rgba(90,74,153,0.25);
+      position: relative;
+    }
+    .flow-arrow::after {
+      content: '';
+      position: absolute; right: -1px; top: -4px;
+      border: 5px solid transparent;
+      border-left-color: rgba(90,74,153,0.4);
+    }
+    .flow-arrow.bad { background: rgba(224,92,92,0.4); }
+    .flow-arrow.bad::after { border-left-color: rgba(224,92,92,0.6); }
+    .flow-arrow.good { background: rgba(51,175,127,0.4); }
+    .flow-arrow.good::after { border-left-color: rgba(51,175,127,0.6); }
+
+    .flow-problem-tag {
+      display: inline-block;
+      background: #e05c5c;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      border-radius: 4px;
+      padding: 2px 6px;
+      margin-top: 6px;
+    }
+
+    /* Hallazgos */
+    .findings-section { margin-bottom: 56px; }
+    .findings-title { font-size: 18px; font-weight: 700; color: var(--gray-900); margin-bottom: 24px; }
+    .findings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .finding-card {
+      background: var(--white);
+      border-left: 4px solid #e05c5c;
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+    }
+    .finding-num { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #e05c5c; margin-bottom: 8px; }
+    .finding-title { font-size: 15px; font-weight: 700; color: var(--gray-900); margin-bottom: 6px; }
+    .finding-desc { font-size: 13px; color: var(--gray-600); line-height: 1.55; }
+    .finding-data { font-size: 22px; font-weight: 800; color: #e05c5c; margin-top: 10px; }
+
+    /* Resultados */
+    .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; }
+    .result-card {
+      background: var(--white);
+      border: 1px solid rgba(90,74,153,0.15);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .result-before { font-size: 13px; color: #e05c5c; text-decoration: line-through; margin-bottom: 4px; }
+    .result-after { font-size: 32px; font-weight: 800; color: var(--green); line-height: 1; }
+    .result-label { font-size: 13px; color: var(--gray-600); margin-top: 8px; line-height: 1.4; }
+
     .cases-section { padding: 100px 0; background: #150F2A; }
     .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
     .case-card { background: rgba(90,74,153,0.15); border: 1px solid rgba(90,74,153,0.25); border-radius: 16px; padding: 28px; }
     .case-industry { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--green-light); margin-bottom: 12px; }
     .case-desc { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.65; }
-    @media (max-width: 900px) { .what-we-do-grid { grid-template-columns: 1fr; } .cases-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 600px) { .cases-grid { grid-template-columns: 1fr; } }
+
+    @media (max-width: 900px) {
+      .what-we-do-grid { grid-template-columns: 1fr; }
+      .cases-grid { grid-template-columns: 1fr; }
+      .company-card { flex-direction: column; gap: 24px; }
+      .company-stats { justify-content: flex-start; }
+      .findings-grid { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .cases-grid { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -118,7 +231,7 @@
         Servicio 01
       </span>
       <h1>Consultoría y Rediseño de Flujos</h1>
-      <p>Analizamos cómo fluye la información en tu empresa y rediseñamos los procesos que frenan tu crecimiento.</p>
+      <p>Analizamos cómo fluye la información en tu empresa y rediseñamos los procesos para sentar las bases de las siguientes implementaciones de IA.</p>
     </div>
   </div>
 </section>
@@ -130,7 +243,7 @@
       <div class="reveal">
         <span class="section-label">Qué hacemos</span>
         <h2 class="section-title">Diagnóstico y rediseño orientado a resultados</h2>
-        <p class="section-sub">Antes de introducir cualquier tecnología, entendemos cómo opera tu negocio hoy y dónde están las fricciones reales.</p>
+        <p class="section-sub">Antes de introducir cualquier tecnología, es necesario entender los flujos de información, de qué manera se encuentra y se almacena la misma, y cuáles son los objetivos de eficiencia que tu empresa necesita.</p>
       </div>
       <div class="reveal">
         <ul class="feature-list">
@@ -142,6 +255,127 @@
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ══ CASO PRÁCTICO ══ -->
+<section class="case-study">
+  <div class="container">
+    <div class="case-study-header reveal">
+      <span class="section-label">Caso práctico</span>
+      <h2 class="section-title">Así trabajamos: un caso real paso a paso</h2>
+      <p class="section-sub" style="margin:0 auto;">Simulamos el proceso completo aplicado a una empresa distribuidora, desde el diagnóstico hasta los resultados.</p>
+    </div>
+
+    <!-- Perfil de empresa -->
+    <div class="company-card reveal">
+      <div class="company-profile">
+        <h3>Distribuidora Eléctrica del Centro</h3>
+        <div class="company-type">Distribuidora de materiales eléctricos · 3 sucursales · Buenos Aires</div>
+        <p>Empresa familiar con 12 años de trayectoria. Distribuye insumos eléctricos a constructoras, electricistas y ferreterías en el GBA. Llegaron a nosotros porque el gerente general pasaba todos los lunes revisando planillas hasta las 10 de la noche y aún así los datos que llegaban a reunión de directorio tenían errores.</p>
+      </div>
+      <div class="company-stats">
+        <div class="company-stat">
+          <div class="stat-num">38</div>
+          <div class="stat-label">empleados</div>
+        </div>
+        <div class="company-stat">
+          <div class="stat-num">3</div>
+          <div class="stat-label">sucursales</div>
+        </div>
+        <div class="company-stat">
+          <div class="stat-num">1.400+</div>
+          <div class="stat-label">SKUs activos</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flujo ANTES -->
+    <div class="flow-section reveal">
+      <div class="flow-label bad">⚠ Proceso original — antes del diagnóstico</div>
+      <div class="flow-diagram">
+        <div class="flow-node ok">Venta en sucursal<div class="node-sub">Punto de venta</div></div>
+        <div class="flow-arrow bad"></div>
+        <div class="flow-node problem">Carga en Excel local<div class="node-sub">cada sucursal, sin formato unificado</div><span class="flow-problem-tag">Cuello 1</span></div>
+        <div class="flow-arrow bad"></div>
+        <div class="flow-node problem">Envío por WhatsApp<div class="node-sub">lunes a la mañana</div><span class="flow-problem-tag">Cuello 2</span></div>
+        <div class="flow-arrow bad"></div>
+        <div class="flow-node problem">Consolidación manual<div class="node-sub">administración central, 4–5 hs</div><span class="flow-problem-tag">Cuello 3</span></div>
+        <div class="flow-arrow bad"></div>
+        <div class="flow-node problem">Informe en Word<div class="node-sub">enviado el miércoles</div></div>
+        <div class="flow-arrow bad"></div>
+        <div class="flow-node ok">Gerencia<div class="node-sub">datos de 5–7 días atrás</div></div>
+      </div>
+    </div>
+
+    <!-- Hallazgos -->
+    <div class="findings-section reveal">
+      <div class="findings-title">Hallazgos del diagnóstico</div>
+      <div class="findings-grid">
+        <div class="finding-card">
+          <div class="finding-num">Cuello de botella 1</div>
+          <div class="finding-title">Excel sin estructura estándar</div>
+          <div class="finding-desc">Cada sucursal tenía su propio template. Sucursal Norte usaba 14 columnas, Centro 11 y Sur 9. Al consolidar, 30% de las filas requerían corrección manual.</div>
+          <div class="finding-data">30% de error</div>
+        </div>
+        <div class="finding-card">
+          <div class="finding-num">Cuello de botella 2</div>
+          <div class="finding-title">Sin trazabilidad en el envío</div>
+          <div class="finding-desc">Los archivos llegaban por WhatsApp con nombres como "ventas2.xlsx" o "final_final.xlsx". En 6 meses se habían procesado 3 versiones incorrectas sin saberlo.</div>
+          <div class="finding-data">3 versiones erróneas / 6 meses</div>
+        </div>
+        <div class="finding-card">
+          <div class="finding-num">Cuello de botella 3</div>
+          <div class="finding-title">Consolidación 100% manual</div>
+          <div class="finding-desc">La administrativa dedicaba entre 4 y 5 horas cada lunes a copiar y pegar datos entre planillas. No podía hacer otra tarea ese día. En semanas de cierre, se extendía al martes.</div>
+          <div class="finding-data">4–5 hs semanales perdidas</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flujo DESPUÉS -->
+    <div class="flow-section reveal">
+      <div class="flow-label good">✓ Proceso rediseñado — entregado en semana 3</div>
+      <div class="flow-diagram">
+        <div class="flow-node ok">Venta en sucursal<div class="node-sub">Punto de venta</div></div>
+        <div class="flow-arrow good"></div>
+        <div class="flow-node highlight">Formulario unificado<div class="node-sub">Google Sheets compartido, template único</div></div>
+        <div class="flow-arrow good"></div>
+        <div class="flow-node highlight">Sincronización automática<div class="node-sub">cada cierre de caja</div></div>
+        <div class="flow-arrow good"></div>
+        <div class="flow-node highlight">Dashboard central<div class="node-sub">Looker Studio, actualización diaria</div></div>
+        <div class="flow-arrow good"></div>
+        <div class="flow-node ok">Gerencia<div class="node-sub">datos del día anterior</div></div>
+      </div>
+    </div>
+
+    <!-- Resultados -->
+    <div class="reveal">
+      <div class="findings-title">Resultados al mes de implementación</div>
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-before">4–5 horas</div>
+          <div class="result-after">20 min</div>
+          <div class="result-label">Tiempo de consolidación semanal</div>
+        </div>
+        <div class="result-card">
+          <div class="result-before">miércoles</div>
+          <div class="result-after">diario</div>
+          <div class="result-label">Frecuencia de actualización del informe</div>
+        </div>
+        <div class="result-card">
+          <div class="result-before">30% filas con error</div>
+          <div class="result-after">0%</div>
+          <div class="result-label">Errores de carga por formato inconsistente</div>
+        </div>
+        <div class="result-card">
+          <div class="result-before">datos de 5–7 días atrás</div>
+          <div class="result-after">24 hs</div>
+          <div class="result-label">Rezago máximo de información para gerencia</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -321,10 +555,15 @@
   let chatMessageCount = 0;
   let chatOpened = false;
 
-  setTimeout(() => {
-    chatWindow.classList.add('open');
-    if (!chatOpened) { chatOpened = true; gaEvent('chatbot_auto_open'); }
-  }, 1200);
+  if (!localStorage.getItem('chatAutoOpened')) {
+    localStorage.setItem('chatAutoOpened', '1');
+    setTimeout(() => {
+      if (!localStorage.getItem('chatClosed')) {
+        chatWindow.classList.add('open');
+        if (!chatOpened) { chatOpened = true; gaEvent('chatbot_auto_open'); }
+      }
+    }, 1200);
+  }
 
   chatBtn.addEventListener('click', () => {
     const isOpening = !chatWindow.classList.contains('open');
@@ -333,7 +572,7 @@
   });
   chatClose.addEventListener('click', () => {
     chatWindow.classList.remove('open');
-    sessionStorage.setItem('chatClosed', '1');
+    localStorage.setItem('chatClosed', '1');
     gaEvent('chatbot_close', { messages_sent: chatMessageCount });
   });
 

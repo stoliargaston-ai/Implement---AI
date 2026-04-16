@@ -478,10 +478,10 @@
   let chatMessageCount = 0;
   let chatOpened = false;
 
-  if (!sessionStorage.getItem('chatAutoOpened')) {
-    sessionStorage.setItem('chatAutoOpened', '1');
+  if (!localStorage.getItem('chatAutoOpened')) {
+    localStorage.setItem('chatAutoOpened', '1');
     setTimeout(() => {
-      if (!sessionStorage.getItem('chatClosed')) {
+      if (!localStorage.getItem('chatClosed')) {
         chatWindow.classList.add('open');
         if (!chatOpened) {
           chatOpened = true;
@@ -501,7 +501,7 @@
   });
   chatClose.addEventListener('click', () => {
     chatWindow.classList.remove('open');
-    sessionStorage.setItem('chatClosed', '1');
+    localStorage.setItem('chatClosed', '1');
     gaEvent('chatbot_close', { messages_sent: chatMessageCount });
   });
 
