@@ -379,28 +379,126 @@
   </div>
 </section>
 
-<!-- ══ CASOS DE APLICACIÓN ══ -->
-<section class="cases-section">
+<!-- ══ CASO AGENCIA ══ -->
+<section class="case-study" style="background: #fff;">
   <div class="container">
+    <div class="case-study-header reveal">
+      <span class="section-label">Caso de aplicación</span>
+      <h2 class="section-title">Agencia de comunicación digital</h2>
+      <p class="section-sub" style="margin:0 auto;">Cómo rediseñamos el flujo de trabajo interno de una agencia que perdía tiempo y clientes por falta de estructura en sus procesos.</p>
+    </div>
+
+    <!-- Perfil -->
+    <div class="company-card reveal">
+      <div class="company-profile">
+        <h3>Agencia Punto Creativo</h3>
+        <div class="company-type">Agencia de comunicación y marketing digital · Buenos Aires</div>
+        <p>Agencia con 6 años de trayectoria, especializada en gestión de redes sociales, diseño gráfico y campañas digitales para pymes. Llegaron a nosotros porque los account managers pasaban horas armando reportes a mano cada mes, los clientes se quejaban de demoras, y el dueño no tenía visibilidad real de qué estaba en producción sin tener que preguntar a cada persona.</p>
+      </div>
+      <div class="company-stats">
+        <div class="company-stat">
+          <div class="stat-num">3</div>
+          <div class="stat-label">account managers</div>
+        </div>
+        <div class="company-stat">
+          <div class="stat-num">18</div>
+          <div class="stat-label">clientes activos</div>
+        </div>
+        <div class="company-stat">
+          <div class="stat-num">~90</div>
+          <div class="stat-label">entregas / mes</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flujo ANTES -->
+    <div class="flow-section reveal">
+      <div class="flow-label bad">⚠ Flujo original — antes de la consultoría</div>
+      <div class="flow-diagram">
+        <div class="flow-node ok">Cliente envía pedido<div class="node-sub">WhatsApp o mail</div></div>
+        <div class="flow-arrow bad"></div>
+        <div class="flow-node problem">Excel del account<div class="node-sub">cada uno con su propio formato</div><span class="flow-problem-tag">Cuello 1</span></div>
+        <div class="flow-arrow bad"></div>
+        <div class="flow-node problem">Coordinación por WhatsApp<div class="node-sub">con diseñadores y redactores</div><span class="flow-problem-tag">Cuello 2</span></div>
+        <div class="flow-arrow bad"></div>
+        <div class="flow-node problem">Producción sin visibilidad<div class="node-sub">estado desconocido hasta preguntar</div><span class="flow-problem-tag">Cuello 3</span></div>
+        <div class="flow-arrow bad"></div>
+        <div class="flow-node ok">Entrega al cliente<div class="node-sub">email o Drive</div></div>
+        <div class="flow-arrow bad"></div>
+        <div class="flow-node problem">Reporte mensual manual<div class="node-sub">PowerPoint armado a mano</div><span class="flow-problem-tag">Cuello 4</span></div>
+      </div>
+    </div>
+
+    <!-- Hallazgos -->
+    <div class="findings-section reveal">
+      <div class="findings-title">Hallazgos del diagnóstico</div>
+      <div class="findings-grid">
+        <div class="finding-card">
+          <div class="finding-num">Cuello de botella 1 y 2</div>
+          <div class="finding-title">Sin registro centralizado de tareas</div>
+          <div class="finding-desc">Cada account manager usaba su propio Excel con columnas distintas. Las solicitudes que llegaban por WhatsApp no siempre se volcaban al sistema. El 40% de las tareas no tenía responsable claro al día siguiente de ser pedidas.</div>
+          <div class="finding-data">40% sin responsable</div>
+        </div>
+        <div class="finding-card">
+          <div class="finding-num">Cuello de botella 3</div>
+          <div class="finding-title">Producción invisible para la dirección</div>
+          <div class="finding-desc">El dueño no podía saber el estado de las entregas sin interrumpir al equipo. En promedio, las entregas se retrasaban 3,8 días respecto al plazo comprometido con el cliente. El 25% de los pedidos de cambio se repetían por falta de registro del feedback original.</div>
+          <div class="finding-data">3,8 días de retraso promedio</div>
+        </div>
+        <div class="finding-card">
+          <div class="finding-num">Cuello de botella 4</div>
+          <div class="finding-title">Reportes que consumían días de trabajo</div>
+          <div class="finding-desc">Cada account manager dedicaba entre 6 y 8 horas al mes a armar reportes de resultados para sus clientes en PowerPoint, copiando métricas de distintas plataformas a mano. Ese tiempo no era facturable y generaba errores frecuentes.</div>
+          <div class="finding-data">7 hs/mes por persona</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flujo DESPUÉS -->
+    <div class="flow-section reveal">
+      <div class="flow-label good">✓ Flujo rediseñado — entregado en semana 3</div>
+      <div class="flow-diagram">
+        <div class="flow-node ok">Cliente completa brief<div class="node-sub">formulario online estandarizado</div></div>
+        <div class="flow-arrow good"></div>
+        <div class="flow-node highlight">Registro automático<div class="node-sub">sistema central con deadline y responsable</div></div>
+        <div class="flow-arrow good"></div>
+        <div class="flow-node highlight">Producción con estado visible<div class="node-sub">En progreso / Revisión / Listo</div></div>
+        <div class="flow-arrow good"></div>
+        <div class="flow-node highlight">Feedback centralizado<div class="node-sub">comentarios registrados en el mismo sistema</div></div>
+        <div class="flow-arrow good"></div>
+        <div class="flow-node ok">Entrega al cliente<div class="node-sub">con trazabilidad completa</div></div>
+        <div class="flow-arrow good"></div>
+        <div class="flow-node highlight">Reporte automático<div class="node-sub">generado desde datos ya cargados</div></div>
+      </div>
+    </div>
+
+    <!-- Resultados -->
     <div class="reveal">
-      <span class="section-label-light">Casos de aplicación</span>
-      <h2 class="section-title-white">Escenarios representativos</h2>
-      <p class="section-sub-white">Situaciones típicas en las que este servicio genera impacto concreto en empresas argentinas.</p>
+      <div class="findings-title">Resultados al mes de implementación</div>
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-before">7 horas</div>
+          <div class="result-after">40 min</div>
+          <div class="result-label">Tiempo mensual en reportes por account</div>
+        </div>
+        <div class="result-card">
+          <div class="result-before">40% sin responsable</div>
+          <div class="result-after">0%</div>
+          <div class="result-label">Tareas sin asignación clara</div>
+        </div>
+        <div class="result-card">
+          <div class="result-before">3,8 días</div>
+          <div class="result-after">0,9 días</div>
+          <div class="result-label">Retraso promedio en entregas</div>
+        </div>
+        <div class="result-card">
+          <div class="result-before">6 clientes</div>
+          <div class="result-after">9 clientes</div>
+          <div class="result-label">Capacidad de gestión por account manager</div>
+        </div>
+      </div>
     </div>
-    <div class="cases-grid">
-      <div class="case-card reveal">
-        <div class="case-industry">Retail</div>
-        <p class="case-desc">Una cadena de locales con reportes manuales en Excel tardaba 3 días en consolidar información de ventas. Rediseñamos el flujo de datos desde el punto de venta hasta el tablero gerencial, eliminando el procesamiento manual.</p>
-      </div>
-      <div class="case-card reveal">
-        <div class="case-industry">Logística</div>
-        <p class="case-desc">Una empresa de distribución usaba WhatsApp para coordinar entregas entre 40 choferes. Mapeamos el flujo y diseñamos un sistema centralizado que redujo errores de coordinación.</p>
-      </div>
-      <div class="case-card reveal">
-        <div class="case-industry">Servicios profesionales</div>
-        <p class="case-desc">Un estudio contable procesaba documentos de clientes por email sin trazabilidad. Diseñamos un flujo estructurado que permitió incorporar automatización en etapas siguientes.</p>
-      </div>
-    </div>
+
   </div>
 </section>
 
